@@ -79,7 +79,7 @@ window.onload = function()
             if(sudoku[a][b][c][d]==solve[a][b][c][d]){
               alert("ganaeste");
             }else{
-              alert"revisa elsudoku");
+              alert("revisa elsudoku");
             }
           });
 
