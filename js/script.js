@@ -1,297 +1,210 @@
-
-var lado_a=0,
-    lado_b=0,
-    base=0,
-    altura=0,
-    radio=0,
-    palabra="";
-    areacu=0,
-    areatr=0,
-    numero=0,
-    areaci=0;
- var contador=0,contador1=0,contador2=0,contador3=0,contador4=0,contador5=0, contador6=0, contador7=0,
-     contador8=0, contador9=0,contador10=0, contador12=0, contador13=0,contador14=0,contador15=0,
-     contador16=0, contador17=0, contador18=0, contador19=0, contador20=0, contador21=0;
-
-
-
-
-
-  //  areacu=lado_a*lado_b;
-
-//--------------------------funcion cuadrado-------------------------------------
-function valor1()
-
+window.onload = function()
 {
+    sudoku      = [],
+        solve       = [],
+        dimension   = 3,
+        dificultad  = 1
+        parteID =0,
+        parteID1=0,
+        parteID2=0,
+        parteID3=0,
+        posicion=0,
+        posicion1=0,
+        posicion2=0,
+        numIngresa=0,
+        a=b=c=d=0,
+        posicion3=0;
 
-  lado_a=document.getElementById('lado_a').value;
-  lado_b=document.getElementById('lado_b').value;
 
-                areacu=lado_a*lado_b;
 
-document.getElementById("mostrar1").innerHTML="el area del cualdrado es: "+areacu;
-//console.log(areacu);
-}
-
-//--------------------------|| funcion triangulo--------------------------
-function valor2()
-
-{
-
-  base=document.getElementById('base').value;
-  altura=document.getElementById('altura').value;
-
-                areatr=(base*altura)/2;
-
-document.getElementById("mostrar2").innerHTML="el area del triangulo es: "+areatr;
-//console.log(areacu);
-}
-
-//------------------------|| funcion circulo----------------------------------
-function valor3()
-
-{
-
-  radio=document.getElementById('radio').value;
-  var pi=Math.PI;
-  var elevado=Math.pow(radio,2);
-                areaci=pi*elevado;
-
-document.getElementById("mostrar3").innerHTML="el area del circulo es: "+areaci;
-console.log(areacu);
-}
-
-//------------------------||funcion para letras y consonantes-------------------
-
-function valor4()
-
-{
-
-  palabra=document.getElementById('palabra').value;
-  palabra=palabra.toLowerCase();
-
-  for(i=0;i<=palabra.length;i++){
-    if(palabra.charAt(i)==="a"){
-        contador++;
+    //Para cargar los combos...
+    var select = nom_div("opc_2");
+    for (var i = 2; i<= 5; i++)
+    {
+        var opt = document.createElement('option');
+        opt.value = i;
+        opt.innerHTML = i;
+        select.appendChild(opt);
     }
 
-  }
-  for(i=0;i<=palabra.length;i++){
-    if(palabra.charAt(i)==="e"){
-        contador1++;
-    }
-  }
-  for(i=0;i<=palabra.length;i++){
-    if(palabra.charAt(i)==="i"){
-        contador2++;
-    }
-  }
-    for(i=0;i<=palabra.length;i++){
-      if(palabra.charAt(i)==="o"){
-          contador3++;
-      }
-    }
-    for(i=0;i<=palabra.length;i++){
-      if(palabra.charAt(i)==="u"){
-          contador4++;
-      }
+    /*
+        Función en la cual llega lel valor escrito por el usaurio
+        además de la posición del valor digitado en la mattriz...
+        Se deberá validar si el número digitado cumple con la condición para estar en esa posición...
+        1. Un número no puede repetirse en el mismo cuadrante...
+        2. Un número no puede estar en la misma Fila.
+        3. Un número no puede estar en la misma columna.
+    */
+    var validaSudoku = function(valor, id)
+    {
+        parteID  = id.split("_");
+        numIngresa=valor;
+      //  console.log(parteID);
+        parteID2=parteID.splice(2);
+        parteID1=parteID.splice(1);
+        parteID3=parteID2.splice(1);
+        posicion=parseInt(parteID);
+        posicion1=parseInt(parteID1);
+        posicion2=parseInt(parteID2);
+        posicion3=parseInt(parteID3);
 
-  }
-  var txt="<table class='tablas'><tr><td class='td'>VOCALES</td><td class='td'>CANTIDAD DE VECES</td></tr><tr><td>A</td><td>"+contador+"</td></tr><tr>"+
-          "<td>E</td><td>"+contador1+"</td></tr><tr><td>I</td>"+
-          "<td>"+contador2+"</td></tr><tr><td>O</td><td>"+contador3+"</td></tr>"+
-          "<tr><td>U</td><td>"+contador4+"</td></tr></table>";
-  document.getElementById("mostrar4").innerHTML=txt;
-contador=0;
-contador1=0;
-contador2=0;
-contador3=0;
-contador4=0;
+        if(sudoku[posicion][posicion1][posicion2][posicion3]==" "){
+         sudoku[posicion][posicion1][posicion2][posicion3]=numIngresa;
+
+          }
+
+        for(posicion=0;posicion<=sudoku.length-1;posicion++){
+          for(posicion1=0;posicion1<=sudoku[posicion].length-1;posicion1++){
+            console.log(sudoku[posicion][posicion1]);
+            for(posicion2=0;posicion2<=sudoku.length-1;posicion2++){
+              for(posicion3=0;posicion3<=sudoku[posicion2].length-1;posicion3++){
+                if(sudoku[posicion][posicion1][posicion2][posicion3]==numIngresa){
+                    console.log(numIngresa);
+                  }
+
+                  }
+
+                }
+              }
+            }
+          }
+
+          nom_div("comprobar").addEventListener('click', function(event){
+            a=eval(posicion)-1;
+            b=eval(posicion)-1;
+            c=eval(posicion)-1;
+            d=eval(posicion)-1;
+
+            console.log("entre");
+            if(sudoku[a][b][c][d]==solve[a][b][c][d]){
+              alert("ganaeste");
+            }else{
+              alert"revisa elsudoku");
+            }
+          });
 
 
-}
-
-
-
-function valor5()
-
-{
-    palabra=document.getElementById('palabra').value;
-    palabra=palabra.toLowerCase();
-
-    for(i=0;i<=palabra.length;i++){
-      if(palabra.charAt(i)==="b"){
-          contador++;
-      }
-
-    }
-    for(i=0;i<=palabra.length;i++){
-      if(palabra.charAt(i)==="c"){
-          contador1++;
-      }
-    }
-    for(i=0;i<=palabra.length;i++){
-      if(palabra.charAt(i)==="d"){
-          contador2++;
-      }
-    }
-      for(i=0;i<=palabra.length;i++){
-        if(palabra.charAt(i)==="f"){
-            contador3++;
+    var nuevoSudoku = (function nuevoSudoku()
+    {
+        var newSudoku = sudokuJS.creaSudoku(dimension, dificultad);
+        sudoku = newSudoku.sudokujs;
+        solve = newSudoku.respuesta;
+        //Para dibujar el sudoku en html...
+        var txt     = "<table>",
+            nomID   = "";
+            eventos = [];
+        for(var fila = 0; fila < sudoku.length; fila++)
+        {
+            txt += "<tr>";
+            for(var col = 0; col < sudoku.length; col++)
+            {
+                txt += "<td>";
+                txt += "<table class = 'cuadrante' id = '"+fila+"_"+col+"'>"
+                for(var i = 0; i < sudoku.length; i++)
+                {
+                    txt += "<tr>";
+                    for(var c = 0; c < sudoku.length; c++)
+                    {
+                        nomID = fila + "_" + col + "_" + i + "_" + c;
+                        txt += "<td class = 'interno' id = 'td_"+(nomID)+"'>"
+                        if(sudoku[fila][col][i][c] !== 0)
+                        {
+                            txt += sudoku[fila][col][i][c];
+                        }
+                        else
+                        {
+                            txt += "<input type = 'text' class = 'numero' id = '"+(nomID)+"' maxlength = '1'>";
+                            eventos.push(nomID);
+                        }
+                        txt += "</td>";
+                    }
+                    txt += "</tr>";
+                }
+                txt += "</table>";
+            }
+            txt += "</tr>";
         }
-      }
-      for(i=0;i<=palabra.length;i++){
-        if(palabra.charAt(i)==="g"){
-            contador4++;
+        txt += "</table>";
+        nom_div("escenario").innerHTML = txt;
+        for(var i = 0; i < eventos.length; i++)
+        {
+            nom_div(eventos[i]).addEventListener("keyup", function(event)
+            {
+                if(isNumber(this.value) || this.value === "")
+                {
+                    validaSudoku(this.value === "" ? 0 : Number(this.value), this.id);
+                }
+                else
+                {
+                    this.value = "";
+                }
+            });
         }
+        //Fin de dibujar el sudoku...
+        return nuevoSudoku;
+    })();
 
-    }
-    for(i=0;i<=palabra.length;i++){
-      if(palabra.charAt(i)==="h"){
-          contador5++;
-      }
-
-    }
-    for(i=0;i<=palabra.length;i++){
-      if(palabra.charAt(i)==="j"){
-        contador6++;
-      }
-
-    }
-    for(i=0;i<=palabra.length;i++){
-      if(palabra.charAt(i)==="k"){
-        contador7++;
-      }
-
-    }
-    for(i=0;i<=palabra.length;i++){
-      if(palabra.charAt(i)==="l"){
-        contador8++;
-      }
-
-    }
-    for(i=0;i<=palabra.length;i++){
-      if(palabra.charAt(i)==="m"){
-        contador9++;
-      }
-
-    }
-    for(i=0;i<=palabra.length;i++){
-      if(palabra.charAt(i)==="n"){
-        contador10++;
-      }
-
-      }
-
-      for(i=0;i<=palabra.length;i++){
-        if(palabra.charAt(i)==="p"){
-          contador12++;
+    nom_div("resuelve").addEventListener('click', function(event)
+	{
+		//console.log(event);
+        //Para completar los campos del sudoku...
+        //resuelve
+        var nomID = "";
+        for(var fila = 0; fila < solve.length; fila++)
+        {
+            for(var col = 0; col < solve.length; col++)
+            {
+                for(var i = 0; i < solve.length; i++)
+                {
+                    for(var c = 0; c < solve.length; c++)
+                    {
+                        //Saber si el input existe para completar el espacio...
+                        nomID = fila + "_" + col + "_" + i + "_" + c;
+                        if(nom_div(nomID) !== null)
+                        {
+                            nom_div(nomID).value = solve[fila][col][i][c];
+                        }
+                    }
+                }
+            }
         }
+	});
 
-      }
-      for(i=0;i<=palabra.length;i++){
-        if(palabra.charAt(i)==="q"){
-          contador13++;
-        }
+    nom_div("nuevo").addEventListener('click', function(event)
+    {
+        nuevoSudoku();
+    });
 
-      }
-      for(i=0;i<=palabra.length;i++){
-        if(palabra.charAt(i)==="r"){
-          contador14++;
-        }
-
-      }
-      for(i=0;i<=palabra.length;i++){
-        if(palabra.charAt(i)==="s"){
-          contador15++;
-        }
-
-      }
-      for(i=0;i<=palabra.length;i++){
-        if(palabra.charAt(i)==="t"){
-          contador16++;
-        }
-
-      }
-      for(i=0;i<=palabra.length;i++){
-        if(palabra.charAt(i)==="v"){
-          contador17++;
-        }
-
-      }
-      for(i=0;i<=palabra.length;i++){
-        if(palabra.charAt(i)==="W"){
-          contador18++;
-        }
-
-      }
-      for(i=0;i<=palabra.length;i++){
-        if(palabra.charAt(i)==="x"){
-      contador19++;
+    for(var combo = 1; combo <= 2; combo++)
+    {
+        nom_div("opc_" + combo).addEventListener('change', function(event)
+        {
+            var numOpc = Number(this.id.split("_")[1]);
+            if(numOpc === 1)
+            {
+                if(Number(this.value) !== 0)
+                {
+                    dificultad = Number(this.value);
+                }
+            }
+            else
+            {
+                if(Number(this.value) !== 0)
+                {
+                    dimension = Number(this.value);
+                }
+            }
+            nuevoSudoku();
+        });
     }
 
-  }
-  for(i=0;i<=palabra.length;i++){
-    if(palabra.charAt(i)==="y"){
-        contador20++;
-      }
-
+    function isNumber(n)
+    {
+        return !isNaN(parseFloat(n)) && isFinite(n);
     }
-    for(i=0;i<=palabra.length;i++){
-      if(palabra.charAt(i)==="z"){
-        contador21++;
-      }
 
-    }
-    var txt1="<table class='tablas'><tr><td class='td'>CONSONANTE</td><td class='td'>CANTIDAD DE VECES</td></tr><tr><td>B</td><td>"+contador+"</td></tr><tr>"+
-    "<td>C</td><td>"+contador1+"</td></tr> <tr><td>D</td><td>"+contador2+"</td></tr> <tr><td>F</td><td>"+contador3+"</td></tr><tr>"+
-    "<td>G</td><td>"+contador4+"</td></tr> <tr><td>H</td><td>"+contador5+"</td></tr> <tr><td>J</td><td>"+contador6+"</td></tr><tr>"+
-    "<td>K</td><td>"+contador7+"</td></tr> <tr><td>L</td><td>"+contador8+"</td></tr> <tr><td>M</td><td>"+contador9+"</td></tr><tr>"+
-    "<td>N</td><td>"+contador10+"</td></tr> <tr><td>P</td><td>"+contador12+"</td></tr><tr>"+
-    "<td>Q</td><td>"+contador13+"</td></tr><tr><td>R</td><td>"+contador14+"</td></tr><tr><td>S</td><td>"+contador15+"</td></tr><tr>"+
-    "<td>T</td><td>"+contador16+"</td></tr> <tr><td>V</td><td>"+contador17+"</td></tr> <tr><td>W</td><td>"+contador18+"</td></tr><tr>"+
-    "<td>X</td><td>"+contador19+"</td></tr> <tr><td>Y</td><td>"+contador20+"</td></tr><tr><td>Z</td><td>"+contador21+"</td></tr></table>";
-
-    document.getElementById("mostrar4").innerHTML=txt1;
-  contador=0;
-  contador1=0;
-  contador2=0;
-  contador3=0;
-  contador4=0;
-  contador5=0;
-  contador6=0;
-  contador7=0;
-  contador8=0;
-  contador9=0;
-  contador10=0;
-  contador12=0;
-  contador13=0;
-  contador14=0;
-  contador15=0;
-  contador16=0;
-  contador17=0;
-  contador18=0;
-  contador19=0;
-  contador20=0;
-  contador21=0;
-}
-//-------------------------------|| numero capicua ||-----------------------------------------------
-
-function valor6(){
-  numero=document.getElementById('numero').value;
-      document.getElementById("mostrar5").innerHTML="el numero debe ser no mayor ni menor a 4 digitos.";
-
-     for(i=0;i<=4;i++){
-    if(numero.charAt(0)===numero.charAt(3) && numero.charAt(1)===numero.charAt(2)){
-
-        document.getElementById("mostrar5").innerHTML="el numero "+numero+" es capicua";
-      }else{
-        document.getElementById("mostrar5").innerHTML="el numero "+numero+" no es capicua";
-      }
-
-   }
-
-
-
-
-}
+    function nom_div(div)
+	{
+		return document.getElementById(div);
+	}
+};
