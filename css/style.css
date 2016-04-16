@@ -1,0 +1,55 @@
+.div{
+  width: 100px;
+  height: 100px;
+  background: #88BBFA;
+    cursor: pointer;
+    box-shadow: 8px 13px 38px -1px #888888;
+}
+.div:hover{
+  background: wheat;
+}
+
+
+}
+.divcolor{
+  width: 100px;
+  height: 100px;
+  background: pink;
+  cursor: pointer;
+}
+
+P{
+  color: white;
+  font-family: "Futura";
+  margin: auto;
+  font-size: 50px;
+  text-shadow: 5px 6px 9px #565656;
+}
+
+@font-face {
+    font-family: "Futura";
+    src: url("../css/calabooseDEMO.otf");
+}
+body{
+background-image: url("../img/01.jpg");
+}
+
+.button{
+  width: 204px;
+  height: 80px;
+  margin-top: 45px;
+  font-size: 30px;
+  color: black;
+  background: #B9D3F6;
+  border-radius: 5px;
+  box-shadow: 2px 0px 28px 2px rgba(90, 46, 62, 0.68);
+}
+.score{
+  margin-left: 70%;
+    margin-top: -39px;
+    font-size: 20px;
+    font-family: arial;
+    color: #5F430F;
+}
+
+swal({   title: "Error!",   text: "Here's my error message!",   type: "error",   confirmButtonText: "Cool" });
