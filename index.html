@@ -1,28 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel = "stylesheet" href = "css/estilos.css">
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+    <script src="css/sweetalert-master/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/sweetalert-master/dist/sweetalert.css">
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+    <title>memoria</title>
+  </head>
+  <body>
+    <center><p>JUEGO DE LA MEMORIA</p></center>
+    <br>
     <center>
-        <h1>SudokuJS</h1>
-        <select id = "opc_1">
-            <option value="0">Dificultad</option>
-            <option value="1">Fácil</option>
-            <option value="2">Medio</option>
-            <option value="3">Difícil</option>
-        </select>
-        <select id = "opc_2">
-            <option value="0">Dimensión</option>
-        </select>
-        <div id = "escenario"></div>
-        <button id = "nuevo">Nuevo Sudoku</button>
-        <button id = "resuelve">Resolver Sudoku</button>
-        <button id = "comprobar">comprobar</button>
+    <table>
+      <tr>
+        <td><div id="div_1" class="div"></div></td>
+        <td><div id="div_2" class="div"></div></td>
+        <td><div id="div_3" class="div"></div></td>
+        <td><div id="div_4" class="div"></div></td>
+      </tr>
+      <tr>
+        <td><div id="div_5" class="div"></div></td>
+        <td><div id="div_6" class="div"></div></td>
+        <td><div id="div_7" class="div"></div></td>
+        <td><div id="div_8" class="div"></div></td>
+      </tr>
+      <tr>
+        <td><div id="div_9" class="div"></div></td>
+        <td><div id="div_10" class="div"></div></td>
+        <td><div id="div_11" class="div"></div></td>
+        <td><div id="div_12" class="div"></div></td>
+      </tr>
+      <tr>
+        <td><div id="div_13" class="div"></div></td>
+        <td><div id="div_14" class="div"></div></td>
+        <td><div id="div_15" class="div"></div></td>
+        <td><div id="div_16" class="div"></div></td>
+      </tr>
+      <div id="tiempo"></div>
     </center>
-    <script src = "js/sudokujs.min.js"></script>
-    <script src = "js/script.js"></script>
-</body>
+    </table>
+
+  <div id="score" class="score"></div>
+    <input type="button" value="empezar" id="empezar" class=button>
+    <input type="button" value="validar" id="compro" class=button>
+
+  </body>
 </html>
