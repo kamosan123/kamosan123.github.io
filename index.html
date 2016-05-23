@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Cardboard</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <style>
-    body
-    {
-        margin: 0px;
-        overflow: hidden;
-    }
-    #example
-    {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-    </style>
+    <meta charset="UTF-8">
+    <title>1 TO 121</title>
+    <script src="js/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="css/sweetalert.css">
 </head>
 <body>
-    <div id="example"></div>
-    
-    <script src="js/three.js"></script>
-    <script src="js/StereoEffect.js"></script>
-    <script src="js/DeviceOrientationControls.js"></script>
-    <script src="js/OrbitControls.js"></script>
-    <script src="js/responsivevoice.js"></script>
-    <script src="js/script.js"></script>
+
+
+<header>
+  <div id="botones">
+    <center>
+            <input id="inicio" class="botones" type="button"  value="iniciar"/>
+            <span><input id="ayudas" class="botones" type="button"  value="ayudas"/></span>
+    </center>
+  </div>
+  <div id="reloj">
+    <ul class="container">
+        <li><div id="hora">00</div></li>
+          <li><div class="divicion">:</div></li>
+           <li><div id="minuto">00</div></li>
+          <li><div class="divicion">:</div></li>
+          <li><div id="segundo">00</div></li>
+    </ul>
+    </div>
+
+</header>
+<!-- Creacion de tabla-->
+          <div id="escenario" ></div>
+
+
+
+
 </body>
+<script src = "js/jquery-1.11.3.min.js"></script>
+<script src="js/sweetalert.min.js"></script>
+<script src = "js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="css/estilos.css">
 </html>
