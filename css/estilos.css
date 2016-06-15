@@ -13,6 +13,85 @@ position: relative;
     background-image: url("../img/01.jpg");
 
 }
+#ventana1{
+		opacity: 0;
+		pointer-events:none;
+		background: rgba(0, 0, 0, 0.7);
+		width: 100%;
+		position: fixed;
+		top: 0px;
+		bottom: 0px;
+		transition:all ease 0.5s;
+	}
+
+		#ventana1:target{
+			opacity: 1;
+			transition:all ease-in 0.5s;
+			pointer-events:all;
+
+		}
+
+    #ventana2{
+    		opacity: 0;
+    		pointer-events:none;
+    		background: rgba(0, 0, 0, 0.7);
+    		width: 100%;
+    		position: fixed;
+    		top: 0px;
+    		bottom: 0px;
+    		transition:all ease 0.5s;
+    	}
+
+    		#ventana2:target{
+    			opacity: 1;
+    			transition:all ease-in 0.5s;
+    			pointer-events:all;
+
+    		}
+    .contenido{
+		background:#fff;
+	}
+
+	.contenedor{
+
+  height: 80%;
+  background: #fff;
+  /* border-radius: 10px; */
+  box-shadow: :#000 0px 0px 20px;
+  border: 3.5px solid rgb(255, 165, 0);
+  width: 850px;
+  margin: 5% auto;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 109px;
+  text-align: center;
+
+	}
+  b{
+
+  }
+  .cerrar{
+    font-size: 1.5em;
+    color: white;
+    background-color: orange;
+    width: 100px;
+  }
+
+	.contenido a{
+		background:#ff0000;
+		color:#fff;
+		position: absolute;
+		margin-top: 10px;
+		margin-right: 10px;
+		padding: 5px;
+		font-family: 'Arial';
+		color: #fff;
+
+	}
+.navbar-default .navbar-nav > li > a{
+  text-decoration: none;
+  color: white;
+  margin-top: -14px;
+}
 
 .logo{
   background: url(../img/logo.png) no-repeat center 70%;
@@ -189,6 +268,7 @@ background-repeat: no-repeat;
       background-repeat: no-repeat;
 }
 
+
 p {
     padding-top: 20px;
     font-family: 'Raleway', sans-serif;
@@ -335,6 +415,13 @@ margin-left: 10px;
 
   /*iphone 5*/
   @media screen and (min-width: 320px) and (max-width: 568px){
+    #imagen1{
+      visibility: none;
+      display:none;
+      }
+  }
+/*dispositivos peques*/
+  @media screen  and (max-width: 319px){
     #imagen1{
       visibility: none;
       display:none;
