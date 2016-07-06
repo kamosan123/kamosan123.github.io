@@ -1,430 +1,792 @@
-.header{
-  background-position: center center;
-background-repeat: no-repeat;
-background-size: cover;
-height: 500px;
-background-color: #C8D0D1;
-text-align: center;
--webkit-transition: height .15s;
-transition: height .15s;
-position: relative;
-}
-.header.banner{
-    background-image: url("../img/01.jpg");
+html,body {
+  margin-top: 130px;
+  height : 90%;
+  background-color:#3888C7;
 
 }
-#ventana1{
-		opacity: 0;
-		pointer-events:none;
-		background: rgba(0, 0, 0, 0.7);
-		width: 100%;
-		position: fixed;
-		top: 0px;
-		bottom: 0px;
-		transition:all ease 0.5s;
-	}
 
-		#ventana1:target{
-			opacity: 1;
-			transition:all ease-in 0.5s;
-			pointer-events:all;
+body{
+  margin: 0;
 
-		}
-
-    #ventana2{
-    		opacity: 0;
-    		pointer-events:none;
-    		background: rgba(0, 0, 0, 0.7);
-    		width: 100%;
-    		position: fixed;
-    		top: 0px;
-    		bottom: 0px;
-    		transition:all ease 0.5s;
-    	}
-
-    		#ventana2:target{
-    			opacity: 1;
-    			transition:all ease-in 0.5s;
-    			pointer-events:all;
-
-    		}
-    .contenido{
-		background:#fff;
-	}
-
-	.contenedor{
-
-  height: 80%;
-  background: #fff;
-  /* border-radius: 10px; */
-  box-shadow: :#000 0px 0px 20px;
-  border: 3.5px solid rgb(255, 165, 0);
-  width: 850px;
-  margin: 5% auto;
-  font-family: 'Raleway', sans-serif;
-  margin-top: 109px;
-  text-align: center;
-  margin-left: 224px;
-
-	}
-  b{
-
-  }
-  .cerrar{
-    font-size: 1.5em;
-    color: white;
-    background-color: orange;
-    width: 100px;
-  }
-
-	.contenido a{
-		background:#ff0000;
-		color:#fff;
-		position: absolute;
-		margin-top: 10px;
-		margin-right: 10px;
-		padding: 5px;
-		font-family: 'Arial';
-		color: #fff;
-
-	}
-.navbar-default .navbar-nav > li > a{
-  text-decoration: none;
-  color: white;
-  margin-top: -14px;
+}
+.secc{
+background-image: url(../img/4.jpg);
+    box-shadow: 0px 9px 42px -2px #6D6D6D;
+    width: 100%;
+    padding-bottom: 20px;
+}
+ .brand{
+   background: url(../img/galavi1.png) no-repeat center 0%;
+       z-index: 3;
+       width: 250px;
+       height: 112px;
+       background-size: 37%;
+       /* text-indent: -9999px; */
+       display: block;
+       margin: 0;
+       margin-top: 17px;
+       padding: 0;
+       position: relative;
+       -webkit-transition: opacity 0.1s ease-out;
+       -moz-transition: opacity 0.1s ease-out;
+       -o-transition: opacity 0.1s ease-out;
+       margin-left: -45px;
+}
+  .navbar-collapse.collapse{
+  margin-top: 25px;
+  margin-right: 25px;
+}
+.carousel,
+.item,
+.active {
+  height: 100%;
+}
+.carousel-inner {
+  height: 100%;
 }
 
-.logo{
-  background: url(../img/logo.png) no-repeat center 70%;
-    width: 225px;
-    height: 98px;
-    background-size: 70%;
-    text-indent: -9999px;
-    display: block;
-    margin: 0;
-    margin-top: 0px;
-    padding: 0;
-    position: relative;
-    -webkit-transition: opacity 0.1s ease-out;
-    -moz-transition: opacity 0.1s ease-out;
-    -o-transition: opacity 0.1s ease-out;
-    transition: opacity 0.1s ease-out;
-    margin-left: 44px;
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
+
 .navbar-default {
-    background-color: rgba(0, 0, 0, 0);
-    border-color: transparent;
-    z-index: 2;
-    height: 100px;
-}
-.navbar-default .navbar-nav > li {
+  background-color: rgb(255, 255, 255);
+  border-color: transparent;
+  z-index: 2;
 
-  font-size: 15px;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    padding: 15px;
-    margin-top: 43px;
-    margin-right: 5px;
-}
-.navbar-default .navbar-nav > li:hover {
-    background-color: white;
-    color: black;
-}
-/*.navbar-right {
-    float: right !important;
-    margin-right: -15px;
-    padding-right: 30px;
-}*/
-.collapse.in {
-
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.secciones{
+.affix{
   background-color: white;
+  color:black;
+  animation: fadein 0.7s;
+}
+/*
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}*/
 
+.navbar-default .navbar-nav > li > a {
+  color: #0c0c0c;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding-top: 46px;
+  filter: alpha(opacity=65);
+  display: block;
+  background: rgba(255,255,255,0);
+  font-family: 'Poppins', sans-serif;
+}
+.navbar-default.affix .navbar-nav > li > a {
+  color: black;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  filter: alpha(opacity=65);
+  display: block;
+  background: rgba(255,255,255,0);
+  font-family: 'Poppins', sans-serif;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: white;
+  color:black;
+}
+.navbar-default .navbar-toggle {
+  border-color: rgba(56, 136, 199, 0.44);
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: rgba(56, 136, 199, 0.37);
 }
 
-.secciones2{
-  background-color: orange;
-}
-h1{
-  padding-top: 40px;
-  font-size: 3.8em;
-  font-family: 'Raleway', sans-serif;
-  color: #7b7979;
-}
-
-h2{
-
-  font-size: 4.2em;
-  text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  padding-top: 150px;
-  color:#ff9422;
+#input{
+  z-index: 1;
+  color: white;
+  position: absolute;
+  margin-top: 150px;
+  padding-bottom: 39px;
+  padding-left: 53px;
+  margin-right: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  padding-right: 37px;
 }
 
-#seccion1{
-  padding-top: 40px;
-  font-size: 2.2em;
-  font-family: 'Raleway', sans-serif;
-  color:#7b7979;
-
-}
-li{
-  list-style-type: none;
+#buscar{
+  height: 65px;
+  color: #6F6F6F;
+  background-color: rgba(255, 255, 255, 0.86);
+  border-radius: 5px;
+  font-size: 29px;
+  margin-top: 32px;
 }
 
-#imagen1{
-  background-image: url("../img/05.png");
-  margin-top: 74px;
-      margin-left: 105px;
-      height: 588px;
-      width: 381px;
-      background-size: 103%;
-
-}
-p{
-  padding-top: 20px;
-  font-family: 'Raleway', sans-serif;
-    font-size: 1.5em;
-    color:#7b7979;
-    text-decoration: none;
+#boton1{
+    height: 64px;
+    border-radius: 3px;
+    background-color: rgba(56, 136, 199, 0.88);
+    font-size: 24px;
+    border-color: rgba(210, 105, 30, 0);
+      margin-top: 32px;
 }
 
-.pseccion2{
-  padding-top: 20px;
-  font-family: 'Raleway', sans-serif;
-    font-size: 1.5em;
-    color:white;
-}
-#imagen2{
-  background-image: url("../img/04.png");
-  height: 550px;
-    width: 649px;
-    /* right: 64%; */
-    margin-left: -116px;
-    margin-top: 129px;
-    /* background-repeat: no-repeat; */
-    background-size: 130%;
+#titulo{
+  margin-top:43px;
 }
 
-.botones{
-  border-radius: 3px;
-    padding: 14px 20px;
-    font-size: 18px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    border: 3px solid rgba(255, 255, 255, 0.75);
-  color:#fff;
-
-}
-#android{
-
-    margin-right: 21px;
-
-}
-.botones:active{
-  background-color: gray;
-   text-decoration:none;
-}
-a:link
-{
- text-decoration:none;
- color: #fff;
+.sec1{
+  background-color: #f1efe8;
+  box-shadow: 0px 9px 42px -2px #6D6D6D;
+  width: 100%;
+  padding-bottom: 20px;
 }
 
-#copy{
-  padding-top: 20px;
-  font-family: 'Raleway', sans-serif;
-    font-size: 1em;
-    color:#7b7979;
-    text-align: center;
+.sec2{
+  background-color:white;
+  box-shadow: 0px 9px 42px -2px #6D6D6D;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.titulos{
+font-family: 'Roboto Condensed', sans-serif;
+  color :#83838c;
+}
+
+.parrafo{
+  font-size: 25px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-left: 91px;
+  margin-top: 38px;
+  color:gray;
+  margin-right: 91px;
+}
+
+.sec3{
+  background-image: url(../img/08.jpg);
+  box-shadow: 0px 9px 42px -2px #6D6D6D;
+  width: 100%;
+  padding-bottom: 20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.sec4{
+  background-image: url(../img/09.jpg);
+  box-shadow: 0px 9px 42px -2px #6D6D6D;
+  width: 100%;
+  padding-bottom: 20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100%;
+}
+
+.boton1{
+    border-color: #4782c0;
+    background-color: #4782c0;
+    color: white;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius:6px;
+    margin-right: 10px;
+    border: 2px solid;
+}
+
+.boton1:hover{
+    border-color: #4782c0;
+    background-color: white;
+    color: gray;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius:6px;
+    margin-right: 10px;
+    border: 2px solid;
+}
+
+.boton2{
+    border-color: white;
+    background-color:transparent;
+    color: white;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius: 6px;
+    border: 2px solid;
+}
+
+.boton2:hover{
+    border-color: white;
+    background-color: #4782c0;
+    color: white;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius:6px;
+    margin-right: 10px;
+    border: 2px solid;
+}
+
+.boton3{
+    border-color: orange;
+    background-color: orange;
+    color: white;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius:6px;
+    margin-right: 10px;
+    border: 2px solid;
+}
+
+.boton3:hover{
+    border-color: #4782c0;
+    background-color: white;
+    color: gray;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius:6px;
+    margin-right: 10px;
+    border: 2px solid;
 }
 
 footer{
-  background-color: rgb(163, 167, 167);
+    width: 100%;
+    height: 115px;
+    padding-top: 1px;
+    background-color: #333333;
 }
-/*ipad acostado*/
-@media screen
-and (max-width: 1024px)
- {
-  #imagen1 {
-    background-image: url("../img/05.png");
-    height: 507px;
-width: 527px;
-right: 50%;
-margin-top: 95px;
-background-size: 65%;
-background-repeat: no-repeat;
+
+.navbar-default .navbar-nav > li > a:hover{
+  background-color: #4782c0;
+  color: white;
 }
-#imagen2 {
-    background-image: url("../img/04.png");
-      height: 506px;
-      /* width: 515px; */
-      right: 50%;
-      margin-left: -213px;
-      margin-top: 103px;
-      background-repeat: no-repeat;
+
+.navbar-default.affix .navbar-nav > li > a:hover{
+  background-color: #4782c0;
+  color:white;
 }
 
 
-p {
-    padding-top: 20px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.2em;
-    color: #7b7979;
-    margin-right: 34px;
-}
-.pseccion2 {
-    padding-top: 20px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.2em;
+/*iphone 6 plus*/
+@media only screen
+    and (min-device-width : 414px)
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait)
+    and (-webkit-min-device-pixel-ratio : 3)
+    and (-webkit-device-pixel-ratio : 3) {
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+   border-color: #e7e7e7;
+   /* height: 147%; */
+   width: 109%;
+ }
+ .navbar-default .navbar-nav > li > a {
+   color: #0c0c0c;
+   text-transform: uppercase;
+   font-size: 11px;
+   font-weight: 700;
+   letter-spacing: 1px;
+   padding-top: 24px;
+   filter: alpha(opacity=65);
+   display: block;
+   background: rgba(255,255,255,0);
+   font-family: 'Poppins', sans-serif;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: rgba(56, 136, 199, 0.44);
+    margin-top: 43px;
+  }
+  .boton2 {
+    border-color: white;
+    background-color: transparent;
     color: white;
-}
-}
-/*ipad de pie*/
-
-@media screen and (max-width: 768px){
- .navbar-default .navbar-nav {
-   font-size: 13px;
-   font-family: 'Montserrat', sans-serif;
-   color: white;
-   padding: 15px;
-   margin-top: -115px;
-   margin-right: -37px;
-
-}
-
-
-
-.logo {
-    background: url(../img/logo.png) no-repeat center 70%;
-    width: 182px;
-    height: 92px;
-    background-size: 70%;
-    text-indent: -9999px;
-    display: block;
-    margin: 0;
-    margin-top: 0px;
-    padding: 0;
-    position: relative;
-    -webkit-transition: opacity 0.1s ease-out;
-    -moz-transition: opacity 0.1s ease-out;
-    -o-transition: opacity 0.1s ease-out;
-    transition: opacity 0.1s ease-out;
-    margin-left: -4px;
-}
-
-#imagen1 {
-  background-image: url("../img/05.png");
-  height: 507px;
-    width: 527px;
-    /* right: 50%; */
-    margin-top: 25px;
-    background-size: 65%;
-    background-repeat: no-repeat;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius: 6px;
+    border: 2px solid;
+    height: 57px;
+    margin-top: 411px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .boton1 {
+    border-color: #4782c0;
+    background-color: #4782c0;
+    color: white;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius: 6px;
+    margin-right: 10px;
+    border: 2px solid;
+    margin-top: 293px;
     margin-left: 10px;
 }
-
-#imagen2{
-  visibility: hidden;
-   display:none;
+.boton21 {
+  border-color: white;
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+  padding-top: 6px;
+  border-radius: 6px;
+  border: 2px solid;
+  height: 57px;
+  margin-top: 10px;
+  margin-left: 10px;
+    margin-right: 10px;
 }
-h2 {
-    font-size: 4.2em;
-    text-align: center;
-    font-family: 'Josefin Sans', sans-serif;
-    padding-top: 6px;
-    color: #ff9422;
+.sec3{
+    background-image: url(../img/08.jpg);
+    box-shadow: 0px 9px 42px -2px #6D6D6D;
+    width: 100%;
+    padding-bottom: 20px;
+    background-repeat: no-repeat;
+    background-size: 330%;
 }
-
-#copy{
-  margin-top: 50px;
-}
-}
-/*intermedio*/
-@media screen and (min-width: 769px) and (max-width: 882px){
-  .navbar-default .navbar-nav {
-    font-size: 13px;
-    font-family: 'Montserrat', sans-serif;
+.boton3 {
+    border-color: orange;
+    background-color: orange;
     color: white;
-    padding: 15px;
-    margin-top: -100px;
-    margin-right: -37px;
- }
- #imagen1 {
-background-image: url("../img/05.png");
-height: 507px;
-width: 527px;
-right: 50%;
-margin-top: 95px;
-background-size: 65%;
-background-repeat: no-repeat;
-margin-left: 10px;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius: 6px;
+    margin-right: 10px;
+    margin-top: 340px;
+    border: 2px solid;
+    margin-left: 10px;
 }
-#imagen2{
-  visibility: hidden;
-  display:none;
+.sec4 {
+  background-image: url(../img/09.jpg);
+  box-shadow: 0px 9px 42px -2px #6D6D6D;
+  width: 100%;
+  padding-bottom: 20px;
+  background-repeat: no-repeat;
+  background-size: 157%;
+  height: 76%;
 }
+.carousel-caption {
+    position: absolute;
+    right: 14%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 4px;
+    padding-bottom: 97px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    margin-top: -13px;
 
 }
-@media screen and (min-width: 883px) and (max-width: 999px){
-  #imagen1 {
- background-image: url("../img/05.png");
- height: 507px;
- width: 527px;
- right: 50%;
- margin-top: 95px;
- background-size: 65%;
- background-repeat: no-repeat;
- margin-left: 14px;
- }
- #imagen2{
-   visibility: none;
-   display:none;
-   }
- }
- @media screen and (min-width: 668px) and (max-width: 767px) {
-   #imagen1{
-     visibility: none;
-     display:none;
+
+  }
+/*  iphone 6 plus acostado*/
+  @media only screen
+   and (min-device-width : 414px)
+   and (max-device-width : 736px)
+   and (orientation : landscape)
+   and (-webkit-min-device-pixel-ratio : 3) {
+
+     .navbar-nav {
+     margin: -12.5px 5px;
      }
-     .secciones{
-       padding-bottom: 30px;
-     }
- }
-
-
-  /*iphone6*/
-  @media screen and (min-width: 375px) and (max-width: 667px) {
-    p{
-      padding-top: 20px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.3em;
-    color: #7b7979;
-    text-decoration: none;
-    margin-right: 34px;
+     .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+      border-color: #e7e7e7;
+      /* height: 147%; */
+      width: 109%;
     }
-    #imagen1{
-      visibility: none;
-      display:none;
-      }
+    .navbar-default .navbar-nav > li > a {
+      color: #0c0c0c;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding-top: 20px;
+      filter: alpha(opacity=65);
+      display: block;
+      background: rgba(255,255,255,0);
+      font-family: 'Poppins', sans-serif;
+     }
+     .navbar-default .navbar-toggle {
+       border-color: rgba(56, 136, 199, 0.44);
+       margin-top: 43px;
+     }
+     .navbar-collapse.collapse {
+    margin-top: 4px;
+    margin-right: 25px;
+    }
+    img {
+    vertical-align: middle;
+    visibility: hidden;
+    display: none;
+  }
+     .boton2 {
+       border-color: white;
+       background-color: transparent;
+       color: white;
+       font-size: 24px;
+       padding-top: 6px;
+       border-radius: 6px;
+       border: 2px solid;
+       height: 57px;
+       margin-top: 411px;
+       margin-left: 10px;
+       margin-right: 10px;
+     }
+     .boton1 {
+       border-color: #4782c0;
+       background-color: #4782c0;
+       color: white;
+       font-size: 24px;
+       padding-top: 6px;
+       border-radius: 6px;
+       margin-right: 10px;
+       border: 2px solid;
+       margin-top: 339px;
+       margin-left: 10px;
+   }
+   .boton21 {
+     border-color: white;
+     background-color: transparent;
+     color: white;
+     font-size: 24px;
+     padding-top: 6px;
+     border-radius: 6px;
+     border: 2px solid;
+     height: 57px;
+     margin-top: 10px;
+     margin-left: 10px;
+      margin-right: 10px;
+   }
+   .sec3{
+      background-image: url(../img/08.jpg);
+      box-shadow: 0px 9px 42px -2px #6D6D6D;
+      width: 100%;
+      padding-bottom: 20px;
+      background-repeat: no-repeat;
+      background-size: 330%;
+   }
+   .boton3 {
+      border-color: orange;
+      background-color: orange;
+      color: white;
+      font-size: 24px;
+      padding-top: 6px;
+      border-radius: 6px;
+      margin-right: 10px;
+      margin-top: 340px;
+      border: 2px solid;
+      margin-left: 10px;
+   }
+   .sec4 {
+     background-image: url(../img/09.jpg);
+     box-shadow: 0px 9px 42px -2px #6D6D6D;
+     width: 100%;
+     padding-bottom: 20px;
+     background-repeat: no-repeat;
+     background-size: 152%;
+     height: 131%;
+   }
+}
 
-  }
+/*iphone 6 acostado*
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (width : 667px)
+and (height : 375px)
+and (orientation : landscape) {
 
-  /*iphone 5*/
-  @media screen and (min-width: 320px) and (max-width: 568px){
-    #imagen1{
-      visibility: none;
-      display:none;
-      }
+    .navbar-nav {
+    margin: -12.5px 5px;
+    }
+
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+   border-color: #e7e7e7;
+   /* height: 147%; *
+   width: 109%;
   }
-/*dispositivos peques*/
-  @media screen  and (max-width: 319px){
-    #imagen1{
-      visibility: none;
-      display:none;
-      }
+  .navbar-default .navbar-nav > li > a {
+   color: #0c0c0c;
+   text-transform: uppercase;
+   font-size: 11px;
+   font-weight: 700;
+   letter-spacing: 1px;
+   padding-top: 15px;
+   filter: alpha(opacity=65);
+   display: block;
+   background: rgba(255,255,255,0);
+   font-family: 'Poppins', sans-serif;
   }
+  .navbar-default .navbar-toggle {
+    border-color: rgba(56, 136, 199, 0.44);
+    margin-top: 43px;
+  }
+  .navbar-collapse.collapse {
+  margin-top: 4px;
+  margin-right: 25px;
+  }
+  img {
+  vertical-align: middle;
+  visibility: hidden;
+  display: none;
+  }
+  .boton2 {
+    border-color: white;
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius: 6px;
+    border: 2px solid;
+    height: 57px;
+    margin-top: 428px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .boton1 {
+    border-color: #4782c0;
+    background-color: #4782c0;
+    color: white;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius: 6px;
+    margin-right: 10px;
+    border: 2px solid;
+    margin-top: 339px;
+    margin-left: 10px;
+  }
+  .boton21 {
+  border-color: white;
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+  padding-top: 6px;
+  border-radius: 6px;
+  border: 2px solid;
+  height: 57px;
+  margin-top: 10px;
+  margin-left: 10px;
+    margin-right: 10px;
+  }
+  .sec3{
+    background-image: url(../img/08.jpg);
+    box-shadow: 0px 9px 42px -2px #6D6D6D;
+    width: 100%;
+    padding-bottom: 20px;
+    background-repeat: no-repeat;
+    background-size: 330%;
+  }
+  .boton3 {
+    border-color: orange;
+    background-color: orange;
+    color: white;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius: 6px;
+    margin-right: 10px;
+    margin-top: 340px;
+    border: 2px solid;
+    margin-left: 10px;
+  }
+  .sec4 {
+  background-image: url(../img/09.jpg);
+  box-shadow: 0px 9px 42px -2px #6D6D6D;
+  width: 100%;
+  padding-bottom: 20px;
+  background-repeat: no-repeat;
+  background-size: 152%;
+      height: 147%;
+  }
+}
+  /*iphone 6 *
+  @media only screen
+    and (min-device-width : 375px)
+    and (max-device-width : 667px)
+    and (width : 375px)
+    and (height : 667px)
+    and (orientation : portrait)
+    {
+
+      .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+       border-color: #e7e7e7;
+       /* height: 147%; *
+       width: 109%;
+     }
+     .navbar-default .navbar-nav > li > a {
+       color: #0c0c0c;
+       text-transform: uppercase;
+       font-size: 11px;
+       font-weight: 700;
+       letter-spacing: 1px;
+       padding-top: 24px;
+       filter: alpha(opacity=65);
+       display: block;
+       background: rgba(255,255,255,0);
+       font-family: 'Poppins', sans-serif;
+      }
+      .navbar-default .navbar-toggle {
+        border-color: rgba(56, 136, 199, 0.44);
+        margin-top: 43px;
+      }
+      .boton2 {
+        border-color: white;
+        background-color: transparent;
+        color: white;
+        font-size: 24px;
+        padding-top: 6px;
+        border-radius: 6px;
+        border: 2px solid;
+        height: 57px;
+        margin-top: 411px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .boton1 {
+        border-color: #4782c0;
+        background-color: #4782c0;
+        color: white;
+        font-size: 24px;
+        padding-top: 6px;
+        border-radius: 6px;
+        margin-right: 10px;
+        border: 2px solid;
+        margin-top: 329px;
+        margin-left: 10px;
+    }
+    .boton21 {
+      border-color: white;
+      background-color: transparent;
+      color: white;
+      font-size: 24px;
+      padding-top: 6px;
+      border-radius: 6px;
+      border: 2px solid;
+      height: 57px;
+      margin-top: 10px;
+      margin-left: 10px;
+        margin-right: 10px;
+    }
+    .sec3{
+        background-image: url(../img/08.jpg);
+        box-shadow: 0px 9px 42px -2px #6D6D6D;
+        width: 100%;
+        padding-bottom: 20px;
+        background-repeat: no-repeat;
+        background-size: 386%;
+    }
+    .boton3 {
+        border-color: orange;
+        background-color: orange;
+        color: white;
+        font-size: 24px;
+        padding-top: 6px;
+        border-radius: 6px;
+        margin-right: 10px;
+        margin-top: 340px;
+        border: 2px solid;
+        margin-left: 10px;
+    }
+    .sec4 {
+      background-image: url(../img/09.jpg);
+      box-shadow: 0px 9px 42px -2px #6D6D6D;
+      width: 100%;
+      padding-bottom: 20px;
+      background-repeat: no-repeat;
+      background-size: 170%;
+      height: 82%;
+    }
+    .carousel-caption {
+        position: absolute;
+        right: 14%;
+        bottom: 20px;
+        left: 15%;
+        z-index: 10;
+        padding-top: 4px;
+        padding-bottom: 97px;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+        margin-top: -13px;
+
+    }
+    }
+
+
+  /*iphone 5*
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 568px)
+  and (orientation : portrait) {
+      #input{
+          margin-top: 96px;
+      }
+      #imagen1{
+        visibility: hidden;
+ display:none;
+      }
+      #imagen2{
+        visibility: hidden;
+ display:none;
+      }
+      .parrafo {
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-left: 10px;
+    margin-top: 34px;
+    margin-right: 10px;
+    color: gray;
+}
+    }
+/*iphone 5 acostado*
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+       #input{
+         margin-top: 68px;
+       }
+       #buscar {
+     height: 42px;
+     margin-top:10px;
+       }
+       #boton1 {
+     height: 42px;
+          margin-top:10px;
+   }
+   #imagen1{
+     visibility: hidden;
+display:none;
+   }
+   #imagen2{
+     visibility: hidden;
+display:none;
+   }
+   .parrafo {
+ font-size: 20px;
+ font-family: 'Source Sans Pro', sans-serif;
+ margin-left: 10px;
+ margin-top: 34px;
+ margin-right: 10px;
+ color: gray;
+}
+
+     }

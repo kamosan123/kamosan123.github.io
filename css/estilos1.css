@@ -1,0 +1,206 @@
+html,body {
+  height : 100%;
+}
+
+body{
+  margin: 0;
+
+}
+ .brand{
+   background: url(../img/galavi1.png) no-repeat center 0%;
+       z-index: 3;
+       width: 250px;
+       height: 112px;
+       background-size: 31%;
+       /* text-indent: -9999px; */
+       display: block;
+       margin: 0;
+       margin-top: 17px;
+       padding: 0;
+       position: relative;
+       -webkit-transition: opacity 0.1s ease-out;
+       -moz-transition: opacity 0.1s ease-out;
+       -o-transition: opacity 0.1s ease-out;
+
+       margin-left: -45px;
+
+}
+
+.navbar-collapse.collapse{
+  margin-top: 25px;
+  margin-right: 25px;
+}
+
+.carousel,
+.item,
+.active {
+  height: 100%;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.navbar-default {
+    background-color: white;
+      color:black;
+
+  z-index: 2;
+
+}
+
+.affix{
+  background-color: white;
+  color:black;
+  animation: fadein 0.7s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: black;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding-top: 46px;
+  filter: alpha(opacity=65);
+  display: block;
+  background: rgba(255,255,255,0);
+  font-family: 'Poppins', sans-serif;
+}
+.navbar-default.affix .navbar-nav > li > a {
+  color: black;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  display: block;
+  background: rgba(255,255,255,0);
+  font-family: 'Poppins', sans-serif;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: black;
+  color:white;
+}
+.navbar-default .navbar-toggle {
+  border-color: rgba(56, 136, 199, 0.44);
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: rgba(56, 136, 199, 0.37);
+}
+
+#input{
+  z-index: 1;
+  color: white;
+  position: absolute;
+  margin-top: 150px;
+  padding-bottom: 39px;
+  padding-left: 53px;
+  margin-right: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  padding-right: 37px;
+}
+
+#buscar{
+  height: 65px;
+  color: #6F6F6F;
+  background-color: rgba(255, 255, 255, 0.86);
+  border-radius: 5px;
+  font-size: 29px;
+  margin-top: 32px;
+}
+
+#boton1{
+    height: 64px;
+    border-radius: 3px;
+    background-color: rgba(56, 136, 199, 0.88);
+    font-size: 24px;
+    border-color: rgba(210, 105, 30, 0);
+      margin-top: 32px;
+}
+
+#titulo{
+  margin-top:43px;
+}
+.sec1{
+  background-color: #f1efe8;
+  box-shadow: 0px 9px 42px -2px #6D6D6D;
+  width: 100%;
+  padding-bottom: 20px;
+
+}
+.sec2{
+  background-color:white;
+  box-shadow: 0px 9px 42px -2px #6D6D6D;
+  width: 100%;
+  padding-bottom: 20px;
+
+}
+.titulos{
+font-family: 'Roboto Condensed', sans-serif;
+  color :#83838c;
+
+}
+.parrafo{
+  font-size: 30px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-left: 91px;
+margin-top: 38px;
+color:gray;
+
+
+
+}
+
+footer{
+      width: 100%;
+      height: 115px;
+      padding-top: 1px;
+      background-color: #333333;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+  background-color: #4782c0;
+  color: white;
+}
+
+.navbar-default.affix .navbar-nav > li > a:hover{
+  background-color: #4782c0;
+  color:white;
+}
+
+
+
+.navbar-default .navbar-nav>.active>a{
+  color: #673AB7;
+    background-color: #E91E63;
+}

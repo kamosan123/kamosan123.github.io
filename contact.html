@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Galavi</title>
+	  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/alertify.core.css" />
+  <link rel="stylesheet" href="css/alertify.default.css" />
+	<link rel="stylesheet" href="css/form-validation.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/estilos1.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Poppins:600' rel='stylesheet' type='text/css'>
+	<link rel="icon" type="image/png" href="/img/favicon.png" />
+
+	<script src = "js/jquery-1.12.3.min.js"></script>
+  <script src="js/alertify.js"></script>
+  <script src = "js/script.js"></script>
+
+	<nav id="navbar" class="navbar navbar-default navbar-fixed-top" data-spy="affix"  data-offset-top="1">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
+					<span class="sr-only">Menu</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+					<a class="brand" href="index.html"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar1">
+				<ul class="nav navbar-nav navbar-right">
+					<li ><a href="#acerca">Acerca de</a></li>
+					<li><a href="#reciclaje-e-infraestructura">RECICLAJE E INFRAESTRUCTURA</a></li>
+					<li><a href="#informacion-juridica">información juridica</a></li>
+					<li><a href="#backoffice-legal">back office legal</a></li>
+					<li><a href="#economia-colaborativa">economÍa colaborativa</a></li>
+					<li><a href="contact.html">Contacto</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+			</head>
+		<body style="background-image: url('./img/06.jpg');background-repeat: no-repeat; background-size:100%;">
+
+		<div class="main-content">
+
+
+    <form class="form-validation" method="post" action="#">
+
+
+    <h3>Contáctenos</h3>
+      <br>
+    <div class="form-row form-input-nameContac-row">
+
+                <label>
+                    <span>Nombres y Apellidos</span>
+                    <input id="NombresContac" type="text" name="Nombres">
+                </label>
+                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
+
+                <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
+                <span class="form-invalid-data-info"></span>
+
+    </div>
+            <div class="form-row form-input-TelefonoContac-row">
+
+                <label>
+                    <span>Teléfono</span>
+                    <input id="TelefonoContac" type="number" name="Telefono">
+                </label>
+
+                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
+
+                <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
+                <span class="form-invalid-data-info"></span>
+
+            </div>
+
+            <div class="form-row form-input-emailContac-row">
+
+                <label>
+                    <span>Correo</span>
+                    <input id="CorreoContac" type="email" name="correo" placeholder="email@example.com">
+                </label>
+
+                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
+
+                <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
+                <span class="form-invalid-data-info"></span>
+
+            </div>
+
+            <div class="form-row form-input-MensajeContac-row">
+
+                <label>
+                    <span id="Msg">Mensaje</span>
+                    <textarea id="MensajeContac" cols="15" rows="5"></textarea>
+                </label>
+
+                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
+
+                <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
+                <span class="form-invalid-data-info"></span>
+
+            </div>
+
+            <div class="form-row">
+                <input class="Validate" type="button" id="EnviarContac" value="Enviar">
+
+            </div>
+
+            <div>
+              <p align="center">  Calle 90. No. 12-28  Bogota D.C - Colombia</p>
+              <p> info@galavi.co</p>
+            </div>
+
+
+    </form>
+
+
+    </div>
+
+</body>
+
+</html>

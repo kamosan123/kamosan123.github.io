@@ -1,205 +1,313 @@
+$(function()
+{
 
-var total_numeros=121;
-var usados = [];
-var dimensiones=11;
-var alto= screen.height;
-var ancho= screen.width;
-var matriz=[[],[],[],[],[],[],[],[],[],[],[]];
-var solucion=[];
-var numero=0;
-var num=0;
-var numeroclic=1;
-var ini=0;
+var ValidaNombres = $('.form-input-name-row');
+var ValidaApellidos = $('.form-input-Apellidos-row');
+var ValidaTelefono = $('.form-input-Telefono-row');
+var ValidaEmail = $('.form-input-email-row');
+
+var nomServicios = [
+              {
+                servicio  :   "Trae Departamentos",
+                urlServicio :   "/Departamentos",
+                metodo    :   "GET"
+              },
+              {
+                servicio  :   "Trae Actividades",
+                urlServicio :   "/Actividades",
+                metodo    :   "GET"
+              },
+              {
+                servicio  :   "Crear Usuario",
+                urlServicio :  "/CrearUsuario",
+                metodo    :   "POST"
+              },
+              {
+                servicio  :   "Crear Contacto",
+                urlServicio :  "http://inprix.co/CrearContacto",
+                metodo    :   "POST"
+              },
+              {
+                servicio  :   "Ultimos Procesos",
+                urlServicio :  "/ultimosregistros",
+                metodo    :   "GET"
+              }
+              ];
 
 
-$( "#inicio" ).click(function() {
-  if(ini === 0){
-  crearEscenario();
-  llenarMatriz();
-  reloj();
-  ini++;
-}else if(ini==1){
-sweetAlert("Oops...", "tienes un juego iniciado terminalo", "error");
-}
+
+var elementos = ["Nombres", "Apellidos","Telefono","Correo","Departamento","Actividad"];
+var elementosContac  = ["NombresContac","TelefonoContac","CorreoContac","MensajeContac"];
+var clasesContac = ["form-input-nameContac-row","form-input-TelefonoContac-row","form-input-emailContac-row","form-input-MensajeContac-row"];
+var clases = [ValidaNombres,ValidaApellidos,ValidaTelefono,ValidaEmail];
+
+var consumeServicios = function(tipo, val)
+{
+        $("#Muestradatos").html('<div id="Cargando"><img src="img/cargando.gif"/></dvi>');
+        var servicio = {
+            url   : nomServicios[tipo - 1].urlServicio,
+            metodo  : nomServicios[tipo - 1].metodo,
+            datos   : ""
+          };
+
+    servicio.datos = val !== "" ? JSON.stringify(val) : "";
+
+    $.ajax(
+    {
+      url     : servicio.url,
+      type    : servicio.metodo,
+      data    : servicio.datos,
+      dataType  : "json",
+      contentType: "application/json; charset=utf-8"
+    }).done(function(data)
+    {
+     switch(tipo)
+     {
+
+        case 2:
+          imprimeActividades(data);
+          //imprimeProcesos(data);
+        break;
+        case 3:
+          console.log(data.status);
+          if(data.status){
+            alertify.alert("<b>Usuario guardado correctamente, Por favor revisé su correo</b>", function () {
+              limpiarCampos();
+            });
+            console.log("Guardado Correctamente");
+          }else{
+            alertify.alert("<b>El Correo ya existe en nuestro sistema</b>");
+            clases[3].addClass('form-invalid-data');
+            console.log("Error");
+          }
+        break;
+        case 4:
+          console.log(data.status);
+          if(data.status){
+            alertify.alert("<b>Formulario enviado, Su mensaje sera contestado al correo "+data.Correo+"</b>", function () {
+              limpiarCamposContact();
+            });
+            console.log("Guardado Correctamente");
+          }else{
+            alertify.alert("<b>El Correo ya existe en nuestro sistema</b>");
+            $("."+clasesContac[2]).addClass('form-invalid-data');
+            console.log("Error");
+          }
+        break;
+        case 5:
+            $("#Muestradatos").fadeIn();
+            imprimeProcesos(data);
+
+          break;
+
+     }
 });
 
-function crearEscenario ()
-    {
-        var txt = "<center><table id = 'tablero' cellpadding = '0' cellspacing = '0' >";
-        var divTabla = "";
-        for(var i = 0; i < dimensiones; i++)
-        {
-            txt += "<tr>";
-            for(var j = 0; j < dimensiones; j++)
-            {
-                divTabla = i + "_" + j;
-                txt += "<td id = '"+(divTabla)+"'></td>";
-            }
-            txt += "</tr>";
+};
+consumeServicios(1, "");
+
+  var  imprimeProcesos = function(data){
+    var htmlTabla = '';
+
+    for(registros in data.results){
+       htmlTabla += '<tr>';
+            htmlTabla += '<td>'+registros+'</td>';
+            htmlTabla += '<td>'+data.results[registros].numProceso+'</td>';
+            htmlTabla += '<td>'+data.results[registros].tipoProceso+'</td>';
+            htmlTabla += '<td>'+data.results[registros].Estado+'</td>';
+            htmlTabla += '<td>'+data.results[registros].Entidad+'</td>';
+            htmlTabla += '<td>'+data.results[registros].Objeto+'</td>';
+            htmlTabla += '<td>'+data.results[registros].DepMun+'</td>';
+            htmlTabla += '<td>'+data.results[registros].Cuantia+'</td>';
+            htmlTabla += '<td>'+data.results[registros].Fecha+'</td>';
+            htmlTabla += '<td><a href="'+data.results[registros].URL+'">Ver Más</a></td>';
+       htmlTabla += '</tr>';
 
 
-        }
-        txt += "</table></center>";
-        $("#escenario").html(txt);
+      }
+
+       $("#Muestradatos").html(htmlTabla);
+        //$("#Muestradatos").html(htmlTabla);
+        $("#MyTable").DataTable();
+        $("#MyTable").footable();
+        //setTimeout(function(){$("#MyTable").DataTable()},1000);
 
 
-          $("#tablero").css
-                          ({
-                             "width"                : (ancho-5)+"px",
-                              "height"              : (alto-100 )+"px",
-                           // "border"              : "1px solid red",
-                              "font-weight"         : "bold",
-                              "font-family"         : "Arial",
-                              "line-height"         : 5+"px",
-                              "cursor"              : "pointer",
-                              "text-align"          :"center",
-                              "font-size"           : "30px",
-                              "margin-top"        :   "20px"
-
-                         });
-
-    clicNumero();
+  };
+  consumeServicios(5, "");
 
 
-    };
-
-function llenarMatriz ()
+  var imprimeDepartamentos = function (data)
   {
-    do
-        {
-        for (var i = 0; i < matriz.length; i++)
-            {
-                for (e=0; e<matriz.length; e++)
-                {
+    var htmlOptions = '';
+    for(i in data){
+      htmlOptions += '<option value="'+data[i].id+'">'+data[i].Departamento+'</option>';
+    }
 
-                       matriz[i][e]=aleatorio(total_numeros);
-                };
-            };
-        }
+    $("#Departamento").html(htmlOptions);
 
-        while(matriz.length===13)
-
-        for (i=0; i<matriz.length; i++)
-            {
-                for (e=0; e<matriz.length; e++)
-                  {
-                    $('#'+i+"_"+e).html(matriz[i][e]).css('color', randomColor());
-                  };
-            };
   }
 
-function aleatorio(min)
-{
-    if (usados.length !=  min)
-    {
-        var num;
-        var repe= false;
-            do
-            {
-                var num=Math.floor((Math.random()*min)+1);
-                repe = repetido(num);
-            }
-
-            while (repe != false);
-                usados.push(num);
-                return num;
+  var imprimeActividades = function (data)
+  {
+    var htmlOptions = '';
+    for(i in data){
+       htmlOptions += '<option value="'+data[i].id+'">'+data[i].Actividad+'</option>';
     }
+    $("#Actividad").html(htmlOptions);
+  }
 
-    else
+
+  var limpiarCampos = function()
+  {
+    console.log("Limpia campos...");
+    for(var i = 0; i < elementos.length; i++)
     {
-    return 0;
+      $("#" + elementos[i]).val("");
+
+      if(i<4){
+        clases[i].removeClass('form-valid-data');
+      }
     }
-}
+  }
+
+  var limpiarCamposContact = function()
+  {
+    console.log("Limpia campos...");
+    for(var i = 0; i < elementosContac.length; i++)
+    {
+      $("#" + elementosContac[i]).val("");
+
+        $("."+clasesContac[i]).removeClass('form-valid-data');
+    }
+  }
+
+//Botones enviar
+  $("#Enviar").click(function(event)
+  {
+    guardarDatos();
+  });
+
+$("#EnviarContac").click(function(event)
+  {
+    guardarContacto();
+  });
 
 
-function repetido(num)
-{
-    var repe = false;
-        for (var i = 0; i < usados.length; i++)
-        {
-            if (num == usados[i])
-            {
-                repe = true;
-            }
-        }
-  return repe;
-
-}
-
-function clicNumero(){
-
-  $("#escenario table tr td").click(function() {
-        num = $(this);
-        numero=parseInt(num.html());
-        if(numero===numeroclic){
-          $("#"+event.toElement.id).removeClass();
-          $("#"+event.toElement.id).addClass().css
-          ({
-            "color"              : 'white',
-            "background-color"   : "#268C9F",
-            "font-weight"        : "bold",
-            "border-radius"      : "15%",
-            "margin"              :  "10px"
-          });
-            solucion.push(numero);
-            numeroclic++;
-        }if(numeroclic >3){
-          swal("Good job!", "You clicked the button!", "success");
-          ini =0;
-          
-        }
-
-        $("#ayudas").click(function(){
-
-            numero.removeClass();
-            numero.addClass.css({
-              "background-color"  : "black"
-            });
+  var guardarDatos = function()
+  {
+    console.log("Entre");
+    var valores = [];
+    var correcto = true;
+    for(var i = 0; i < elementos.length; i++)
+    {
+      if($("#" + elementos[i]).val() === "" )
+      {
+        alertify.alert("<b>Digité todos los campos</b>",function(){
+          $("#" + elementos[i]).focus();
+          clases[i].addClass('form-invalid-data');
         });
-        console.log(solucion);
+        correcto = false;
+        break;
+      }else if(!isValidEmail($("#"+elementos[3]).val())){
+         correcto = false;
+         alertify.alert("<b>El correo no es válido</b>");
+         break;
+      }else{
+        if(i < 4){
+        clases[i].addClass('form-valid-data');
+        }
+        valores[i] = $("#" + elementos[i]).val();
+        correcto = true;
 
+      }
 
-     });
-
-}
-
-function reloj(){
-  var tiempo = {
-        hora: 0,
-        minuto: 0,
-        segundo: 0
-    };
-
-    var tiempo_corriendo = null;
-
-
-            tiempo_corriendo = setInterval(function(){
-                // Segundos
-                tiempo.segundo++;
-                if(tiempo.segundo >= 60)
-                {
-                    tiempo.segundo = 0;
-                    tiempo.minuto++;
-                }
-
-                // Minutos
-                if(tiempo.minuto >= 60)
-                {
-                    tiempo.minuto = 0;
-                    tiempo.hora++;
-                }
-
-                $("#hora").text(tiempo.hora < 10 ? '0' + tiempo.hora : tiempo.hora);
-                $("#minuto").text(tiempo.minuto < 10 ? '0' + tiempo.minuto : tiempo.minuto);
-                $("#segundo").text(tiempo.segundo < 10 ? '0' + tiempo.segundo : tiempo.segundo);
-            }, 1000);
-
-}
-
-
-function randomColor ()
-    {
-        // from http://www.paulirish.com/2009/random-hex-color-code-snippets/
-        return '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
-        (c && lol(m,s,c-1))})(Math,'0123456789ABCDEF',4);
     }
+    console.log(correcto);
+    if(correcto)
+    {
+      var Fecha = new Date();
+      var FechaOrdenada = Fecha.getDate()+"/"+(Fecha.getMonth()+1)+"/"+Fecha.getFullYear()+" "+Fecha.getHours()+":"+Fecha.getMinutes();
+      var nuevoDato = {
+                Nombres  :  valores[0],
+                Apellidos : valores[1],
+                Telefono  : valores[2],
+                Correo  :  valores[3],
+                Departamento : valores[4],
+                Actividad :  valores[5],
+                Fecha  :   FechaOrdenada,
+
+              };
+      console.log(nuevoDato);
+      consumeServicios(3, nuevoDato);
+
+    }
+
+
+  }
+
+  var guardarContacto = function()
+  {
+    console.log("Entre");
+    var valores = [];
+    var correcto = true;
+    for(var i = 0; i < elementosContac.length; i++)
+    {
+      if($("#" + elementosContac[i]).val() === "" )
+      {
+        alertify.alert("<b>Digité todos los campos</b>",function(){
+          $("#" + elementosContac[i]).focus();
+          $("."+clasesContac[i]).addClass('form-invalid-data');
+        });
+        correcto = false;
+        break;
+      }else if(!isValidEmail($("#"+elementosContac[2]).val())){
+         correcto = false;
+         alertify.alert("<b>El correo no es válido</b>");
+         break;
+      }else{
+        $("."+clasesContac[i]).addClass('form-valid-data');
+        valores[i] = $("#" + elementosContac[i]).val();
+        correcto = true;
+
+      }
+
+    }
+    console.log(correcto);
+    if(correcto)
+    {
+      var Fecha = new Date();
+      var FechaOrdenada = Fecha.getDate()+"/"+(Fecha.getMonth()+1)+"/"+Fecha.getFullYear()+" "+Fecha.getHours()+":"+Fecha.getMinutes();
+      var nuevoDato = {
+                Nombres  :  valores[0],
+                Telefono  : valores[1],
+                Correo  :  valores[2],
+                Mensaje : valores[3],
+                Fecha  :   FechaOrdenada,
+                origen : 1
+              };
+      console.log(nuevoDato);
+      consumeServicios(4, nuevoDato);
+
+    }
+
+
+  }
+
+/*Captura el Enter*/
+ /*
+  window.onkeydown = function(e)
+	{
+		var code = e.keyCode ? e.keyCode : e.which;
+		if(code == 13){
+			guardarDatos();
+		}
+
+	}
+*/
+function isValidEmail(mail)
+{
+    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
+}
+
+});
