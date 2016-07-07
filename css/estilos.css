@@ -782,9 +782,9 @@ and (orientation : landscape) {
 
   /*iphone 5*/
   @media only screen
-  and (min-device-width : 320px)
-  and (max-device-width : 568px)
-  and (orientation : portrait) {
+  and (min-width : 320px)
+  and (max-width : 568px)
+   {
       #input{
           margin-top: 96px;
       }
