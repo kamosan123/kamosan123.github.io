@@ -780,7 +780,7 @@ and (orientation : landscape) {
     }
 
 
-  /*iphone 5*/
+  /*iphone 5*
   @media only screen
   and (min-device-width : 320px)
   and (max-device-width : 568px)
@@ -788,11 +788,14 @@ and (orientation : landscape) {
       #input{
           margin-top: 96px;
       }
-      img{
+      #imagen1{
         visibility: hidden;
-     display:none;
+ display:none;
       }
-
+      #imagen2{
+        visibility: hidden;
+ display:none;
+      }
       .parrafo {
     font-size: 20px;
     font-family: 'Source Sans Pro', sans-serif;
@@ -800,40 +803,6 @@ and (orientation : landscape) {
     margin-top: 34px;
     margin-right: 10px;
     color: gray;
-      }
-
-      .boton2 {
-    border-color: white;
-    background-color: transparent;
-    color: white;
-    font-size: 24px;
-    padding-top: 6px;
-    border-radius: 6px;
-    border: 2px solid;
-    margin-top: 478px;
-    margin-left: 7px;
-    margin-right: 7px;
-      }
-
-      .secc {
-    background-image: url(../img/4.jpg);
-    box-shadow: 0px 9px 42px -2px #6D6D6D;
-    width: 100%;
-    padding-bottom: -15px;
-    height: 137%;
-  }
-
-  .boton1 {
-  border-color: #4782c0;
-  background-color: #4782c0;
-  color: white;
-  font-size: 24px;
-  padding-top: 6px;
-  border-radius: 6px;
-  margin-right: 10px;
-  border: 2px solid;
-  margin-top: 430px;
-  margin-left: 10px;
 }
     }
 /*iphone 5 acostado*
