@@ -1,0 +1,300 @@
+html, body {
+     margin-top: 0;
+     height: 0;
+     background-color: #3888C7;
+}
+
+/*ipad*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation : portrait)  {
+  .sec5{
+    width: 100%;
+    background-size: 156%;
+    padding-bottom: 203px;
+  }
+.botones {
+    border-color: white;
+     background-color: transparent;
+     color: white;
+     font-size: 24px;
+     padding-top: 6px;
+     border-radius: 6px;
+     border: 2px solid;
+     margin-left: 0;
+     margin-right: 0;
+
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation : landscape)  {
+.botones {
+    border-color: white;
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+    padding-top: 6px;
+    border-radius: 6px;
+    border: 2px solid;
+    margin-left: 64px;
+    text-align: center;
+    padding-bottom: 8px;
+    margin-top: 86px;
+  }
+  .sec5 {
+    background-image: url(../img/42.jpg);
+    background-repeat: no-repeat;
+    padding-bottom: 137px;
+    background-size: 100%;
+    width: 100%;
+  }
+}
+/*iphone 6 pls*/
+@media only screen
+    and (min-width : 414px)
+    and (max-width : 736px)
+    and (orientation : portrait)
+     {
+   .botones {
+       border-color: white;
+        background-color: transparent;
+        color: white;
+        font-size: 24px;
+        padding-top: 6px;
+        border-radius: 6px;
+        border: 2px solid;
+        margin-left: 0;
+        margin-right: 0;
+
+     }
+
+     .sec5{
+       width: 100%;
+       background-size: 281%;
+       padding-bottom: 83px;
+     }
+ }
+
+ /*iphone 6 */
+ @media only screen
+     and (min-width : 375px)
+     and (max-width : 667px)
+     and (orientation : portrait)
+      {
+    .botones {
+        border-color: white;
+         background-color: transparent;
+         color: white;
+         font-size: 24px;
+         padding-top: 6px;
+         border-radius: 6px;
+         border: 2px solid;
+         margin-left: 0;
+         margin-right: 0;
+
+      }
+
+      .sec5{
+        width: 100%;
+        background-size: 281%;
+        padding-bottom: 83px;
+      }
+  }
+  @media only screen
+      and (min-width : 375px)
+      and (max-width : 667px)
+      and (orientation : landscape)
+       {
+         .brand {
+    background: url(../img/galavi1.png) no-repeat center 0%;
+    z-index: 3;
+    width: 175px;
+    height: 112px;
+    background-size: 34%;
+    /* text-indent: -9999px; */
+    display: block;
+    margin: 0;
+    margin-top: 17px;
+    padding: 0;
+    position: relative;
+    -webkit-transition: opacity 0.1s ease-out;
+    -moz-transition: opacity 0.1s ease-out;
+    -o-transition: opacity 0.1s ease-out;
+    margin-left: -45px;
+}
+         .botones {
+             border-color: white;
+              background-color: transparent;
+              color: white;
+              font-size: 24px;
+              padding-top: 6px;
+              border-radius: 6px;
+              border: 2px solid;
+              margin-left: 0;
+              margin-right: 0;
+
+           }
+
+           .sec5{
+             width: 100%;
+            background-size: 332%;
+            padding-bottom: 83px;
+           }
+
+           .navbar-collapse.collapse {
+
+             margin-top: -8px;
+             margin-right: -34px;
+             height: 217px;
+
+         }
+
+     .navbar-default .navbar-nav > li > a {
+       color: #0c0c0c;
+       text-transform: uppercase;
+       font-size: 8px;
+       font-weight: 700;
+       letter-spacing: 1px;
+       padding-top: 10px;
+       filter: alpha(opacity=65);
+       display: block;
+       background: rgb(255, 255, 255);
+       font-family: 'Poppins', sans-serif;
+   }
+   .navbar-toggle {
+       position: relative;
+       float: right;
+       padding: 9px 10px;
+       margin-top: 26px;
+       margin-right: 15px;
+       margin-bottom: 8px;
+       background-color: transparent;
+       background-image: none;
+       border: 1px solid transparent;
+       border-radius: 4px;
+   }
+
+   .container-fluid {
+       padding-right: 15px;
+       padding-left: 15px;
+       margin-right: auto;
+       margin-left: auto;
+       width: -16px;
+       height: 97px;
+   }
+   .navbar-header{
+     margin-right: -15px;
+         margin-left: -15px;
+         height:  97px;
+         position: relative;
+         background-color: white;
+
+   }
+
+   body {
+       margin: 0;
+       margin-top: -7px;
+   }
+  }
+  /*iphone 5 */
+  @media only screen
+      and (min-width : 320px)
+      and (max-width : 568px)
+      and (orientation : portrait)
+       {
+     .botones {
+         border-color: white;
+          background-color: transparent;
+          color: white;
+          font-size: 24px;
+          padding-top: 6px;
+          border-radius: 6px;
+          border: 2px solid;
+          margin-left: 0;
+          margin-right: 0;
+
+       }
+
+       .sec5{
+         width: 100%;
+        background-size: 332%;
+        padding-bottom: 83px;
+       }
+   }
+
+   @media only screen
+       and (min-width : 320px)
+       and (max-width : 568px)
+       and (orientation : landscape)
+        {
+
+      .botones {
+          border-color: white;
+           background-color: transparent;
+           color: white;
+           font-size: 24px;
+           padding-top: 6px;
+           border-radius: 6px;
+           border: 2px solid;
+           margin-left: 0;
+           margin-right: 0;
+
+        }
+
+        .sec5{
+          width: 100%;
+         background-size: 332%;
+         padding-bottom: 83px;
+        }
+
+        .navbar-collapse.collapse {
+          margin-top: 1px;
+          margin-right: -34px;
+          height: 172px;
+      }
+
+  .navbar-default .navbar-nav > li > a {
+    color: #0c0c0c;
+    text-transform: uppercase;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-top: 10px;
+    filter: alpha(opacity=65);
+    display: block;
+    background: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+}
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 26px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: -16px;
+    height: 97px;
+}
+.navbar-header{
+  margin-right: -15px;
+      margin-left: -15px;
+      height:  88px;
+      position: relative;
+      background-color: white;
+
+}
+
+body {
+    margin: 0;
+    margin-top: -7px;
+}
+    }
